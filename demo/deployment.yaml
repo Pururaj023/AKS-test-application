@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: templatemo-nginx
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: templatemo-nginx
+  template:
+    metadata:
+      labels:
+        app: templatemo-nginx
+    spec:
+      containers:
+      - name: nginx
+        image: yourdockerhubusername/templatemo-nginx:1.0
+        ports:
+        - containerPort: 80

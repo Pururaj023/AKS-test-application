@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body style="background:#020617;color:#e5e7eb;font-family:Arial;padding:40px">
+
+<h2>Welcome {{user}}</h2>
+
+<h3>Products</h3>
+{% for p in products %}
+<form method="post" action="/add-to-cart">
+  <input type="hidden" name="user" value="{{user}}">
+  <input type="hidden" name="product" value="{{p}}">
+  {{p}} <button>Add to Cart</button>
+</form>
+{% endfor %}
+
+<form method="post" action="/checkout">
+  <input type="hidden" name="user" value="{{user}}">
+  <button>Checkout</button>
+</form>
+
+<form method="post" action="/generate-error">
+  <input type="hidden" name="user" value="{{user}}">
+  <button>Generate Error</button>
+</form>
+
+<form method="post" action="/logout">
+  <input type="hidden" name="user" value="{{user}}">
+  <button>Logout</button>
+</form>
+
+</body>
+</html>

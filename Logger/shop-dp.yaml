@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shop-app
+  labels:
+    app: shop-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shop-app
+  template:
+    metadata:
+      labels:
+        app: shop-app
+    spec:
+      containers:
+      - name: shop-app
+        image: pururajchoudhary23/shop-app:1.0   # or your registry image
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8000

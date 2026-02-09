@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Application</title>
+  <style>
+    body {
+      background: #020617;
+      color: #e5e7eb;
+      font-family: Arial, sans-serif;
+      padding: 40px;
+    }
+
+    input, button {
+      padding: 8px;
+      margin: 5px 0;
+      width: 300px;
+      background: #020617;
+      color: #e5e7eb;
+      border: 1px solid #334155;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1e293b;
+    }
+
+    .error {
+      margin-top: 20px;
+      border-top: 1px solid #334155;
+      padding-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h2>User Action Form</h2>
+
+<form method="post" action="/submit">
+  <input name="username" placeholder="Username" required /><br>
+  <input name="email" placeholder="Email" required /><br>
+  <input name="action" placeholder="Action (login / order / payment)" required /><br>
+  <button type="submit">Submit Action</button>
+</form>
+
+<div class="error">
+  <h3>Error Generator</h3>
+
+  <form method="post" action="/generate-error">
+    <input name="username" placeholder="Username" required /><br>
+    <button type="submit">Generate Error</button>
+  </form>
+</div>
+
+</body>
+</html>
